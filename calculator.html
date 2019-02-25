@@ -1,0 +1,250 @@
+<html>
+<head> 
+	<title> Calculator </title>
+	<link href="am.png" rel="icon">
+
+<!-- CSS -->
+
+	<style type="text/css">
+		body {
+			height: 100%;
+	        background: linear-gradient(#1c595e 50%, white);
+	        background-size: cover;
+			 }
+
+		#bg {
+			margin: 0 auto;
+			padding: 0px;
+			width: 350px;
+			height: 380px;
+			background-color: #1c595e;
+
+			border-radius: 30px;
+			box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 0.2);
+			
+		}
+		#calculator {
+			margin-left: 30px;
+			margin-top: 80px;
+
+			padding-top: 30px;
+			
+		}
+		
+
+
+	
+		.screen {
+			width: 140px;
+			height: 40px;
+			font-size: 20px;
+			background: rgba(255, 255, 255, 0.9);
+	        border-radius: 1px;
+	        box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2); 
+	        font-size: 21px;
+	 		line-height: 60px;
+			color: black;
+			border:none;
+			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+			text-align: right;
+			letter-spacing: 1px;
+			border-radius: 10px;
+			
+		}
+		.button {
+			width: 70px;
+			height: 40px;
+			cursor: pointer;
+			border-radius: 30px;
+			border:none;
+			box-shadow: 1px 2px rgba(0, 0, 0, 0.2);
+			font-size: 17px;
+			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+		}
+		.button:hover {
+			background-color: #FF9A08;
+		}
+		.button1 {
+			width: 70px;
+			height: 40px;
+			background-color: #4EB4B0;
+			cursor: pointer;
+			border:none;
+			border-radius: 30px;
+			box-shadow: 1px 2px rgba(0, 0, 0, 0.2);
+			font-size: 17px;
+			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+		}
+		.button1:hover {
+			background-color: #F79E4C;
+		}
+		.buttonred {
+			width: 70px;
+			height: 40px;
+			background-color: #3B8E96;
+			cursor: pointer;
+			border:none;
+			border-radius: 30px;
+			box-shadow: 1px 2px rgba(0, 0, 0, 0.2);
+			font-size: 17px;
+			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+		}
+		.buttonred:hover {
+			background-color: #F79E4C;
+		}
+		.buttonce {
+			width: 70px;
+			height: 40px;
+			background-color: #3B8E96;
+			cursor: pointer;
+			border:none;
+			border-radius: 30px;
+			box-shadow: 1px 2px rgba(0, 0, 0, 0.2);
+			font-size: 17px;
+			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+		}
+		.buttonce:hover {
+			background-color: #F79E4C;
+		}
+
+		#devname{
+			color: #1c595e;
+			
+			margin-top: 80px;
+			text-align: center;
+			padding-top: 30px;
+		}
+	
+
+
+	</style>
+
+
+	<!-- Script -->
+
+
+
+	<script type="text/javascript">
+		var val1 = 0;
+		var val2 = 0;
+		var op = '';
+		var result = 0;
+		function displaynum(n1) {
+			document.forms["calcform"]["text1"].value = document.forms["calcform"]["text1"].value + n1;
+		}
+		function calcevent(operator) {
+			val1 = document.forms["calcform"]["text1"].value;
+			op = operator;
+			
+			document.forms["calcform"]["text1"].value = '';
+		}
+		function calc() {
+
+			val2 = document.forms["calcform"]["text1"].value;
+			if( op=='+' ) {
+
+				result = +val1 + +val2;
+
+				document.forms["calcform"]["text1"].value = result;
+
+
+			}
+
+			if( op=='-' ) {
+
+				result = +val1 - +val2;
+
+				document.forms["calcform"]["text1"].value = result;
+
+
+			}
+
+			if( op=='*' ) {
+
+				result = +val1 * +val2;
+
+				document.forms["calcform"]["text1"].value = result;
+
+
+			}
+
+			if( op=='/' ) {
+
+				result = +val1 / +val2;
+
+				document.forms["calcform"]["text1"].value = result;
+
+
+			}
+
+			if( op=='%' ) {
+
+				result = +val1 % +val2;
+
+				document.forms["calcform"]["text1"].value = result;
+
+
+			}
+		}
+	</script>
+</head>
+
+<body>
+<div id="bg">
+<div id="calculator">
+
+
+ 	
+ 	<form name="calcform">
+
+			<input class="screen"  type="text" name="text1" >
+
+			
+
+			
+ 			<input type="button"  class="button" name="btnper" value="%" onclick="calcevent(this.value)"> 
+ 			<input type="reset" class="buttonce" value="CE">
+
+ 	        <br><br>
+
+ 			<input type="button"  class="button" name="btn9" value="9" onclick="displaynum(this.value)">
+ 			<input type="button"  class="button" name="btn8" value="8" onclick="displaynum(this.value)">
+ 			<input type="button"  class="button" name="btn7" value="7" onclick="displaynum(this.value)"> 
+ 			<input type="button"  class="button1" name="btndiv" value="/" onclick="calcevent(this.value)">
+ 		     
+ 		     <br><br>
+
+ 			<input type="button"  class="button" name="btn6" value="6" onclick="displaynum(this.value)">
+ 			<input type="button"  class="button" name="btn5" value="5" onclick="displaynum(this.value)">
+ 			<input type="button"  class="button" name="btn4" value="4" onclick="displaynum(this.value)"> 
+ 			<input type="button"  class="button1" name="btnmul" value="*" onclick="calcevent(this.value)">
+ 			
+ 		 	 <br><br>	
+
+ 			<input type="button"  class="button" name="btn3" value="3" onclick="displaynum(this.value)">
+ 			<input type="button"  class="button" name="btn2" value="2" onclick="displaynum(this.value)">
+ 			<input type="button"  class="button" name="btn1" value="1" onclick="displaynum(this.value)"> 
+ 			<input type="button"  class="button1" name="btnsub" value="-" onclick="calcevent(this.value)">
+
+ 			<br><br>
+
+ 			<input type="button"  class="button" name="btn0" value="0" onclick="displaynum(this.value)">
+ 			<input type="button"  class="button" name="btndot" value="." onclick="displaynum(this.value)">
+ 			<input type="button"  class="buttonred" name="btneql" value="=" onclick="calc()">
+ 			<input type="button"  class="button1" name="btnadd" value="+" onclick="calcevent(this.value)"> 
+ 			
+ 			
+    </form>
+
+</div>
+
+</div>
+
+
+<div id="devname">
+
+
+</div>
+
+</body>
+</html>
